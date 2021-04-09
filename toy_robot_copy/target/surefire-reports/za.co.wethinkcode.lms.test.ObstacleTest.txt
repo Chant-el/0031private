@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: za.co.wethinkcode.lms.test.ObstacleTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in za.co.wethinkcode.lms.test.ObstacleTest
+testBlockPosition  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at za.co.wethinkcode.lms.test.ObstacleTest.testBlockPosition(ObstacleTest.java:22)
+
+testBlockPath  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at za.co.wethinkcode.lms.test.ObstacleTest.testBlockPath(ObstacleTest.java:32)
+

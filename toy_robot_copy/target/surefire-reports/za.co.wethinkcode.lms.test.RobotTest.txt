@@ -1,0 +1,19 @@
+-------------------------------------------------------------------------------
+Test set: za.co.wethinkcode.lms.test.RobotTest
+-------------------------------------------------------------------------------
+Tests run: 15, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.064 s <<< FAILURE! - in za.co.wethinkcode.lms.test.RobotTest
+testReplayNoArg  Time elapsed: 0.009 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <[0,60] HAL> Shutting down...> but was: <[10,-10] HAL> Shutting down...>
+	at za.co.wethinkcode.lms.test.RobotTest.verifyOutput(RobotTest.java:33)
+	at za.co.wethinkcode.lms.test.RobotTest.testReplayNoArg(RobotTest.java:165)
+
+testReplayNoArgReversed  Time elapsed: 0.002 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <[0,60] HAL> Shutting down...> but was: <[-10,-40] HAL> Shutting down...>
+	at za.co.wethinkcode.lms.test.RobotTest.verifyOutput(RobotTest.java:33)
+	at za.co.wethinkcode.lms.test.RobotTest.testReplayNoArgReversed(RobotTest.java:184)
+
+testMazerunCommandEmptyMaze  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <[0,200] HAL> Shutting down...> but was: <[0,0] HAL> Shutting down...>
+	at za.co.wethinkcode.lms.test.RobotTest.verifyOutput(RobotTest.java:33)
+	at za.co.wethinkcode.lms.test.RobotTest.testMazerunCommandEmptyMaze(RobotTest.java:285)
+
