@@ -19,9 +19,13 @@ public class BackCommand extends Command {
         super("back", argument);
     }
 
-    @Override
-    public boolean execute(za.co.wethinkcode.toyrobot.world.Robot target) {
-        // TODO Auto-generated method stub
-        return false;
+    public Object JSONResponseMsg () {
+        return null;
     }
+
+    // @Override
+    // public boolean execute(za.co.wethinkcode.toyrobot.world.Robot target) {
+    //     // TODO Auto-generated method stub
+    //     return false;
+    // }
 }

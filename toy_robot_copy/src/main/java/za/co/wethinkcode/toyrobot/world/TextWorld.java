@@ -25,10 +25,6 @@ public class TextWorld implements IWorld {
 
     private String centre;
 
-    private String propertiesPath;
-    private Properties properties;
-    private FileInputStream configFileInput;
-
     public TextWorld(EmptyMaze maze) {
 
     }
@@ -119,38 +115,4 @@ public class TextWorld implements IWorld {
         
     }
 
-    public String getCentre() {
-        // System.out.println(centre.charAt(1));
-        return centre;
-    }
-
-    public void loadWorldConfiguration() throws FileNotFoundException {
-    
-        this.properties = new Properties();
-        this.configFileInput = new FileInputStream("config.properties");
-
-        try {
-            properties.load(configFileInput);
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println("Could not load the properties file");
-        }
-    }
-
-    @Override
-    public void setCentre() {
-        // TODO Auto-generated method stub
-    
-        String centre;
-        centre = properties.getProperty("centre");
-        final Position CENTRE = new Position(Integer.parseInt(String.valueOf(centre.charAt(1))), Integer.parseInt(String.valueOf(centre.charAt(3))));
-
-    }
-
-    @Override
-    public int getMaxShieldStrength() {
-        
-        final int maxShieldStrength = Integer.parseInt(properties.getProperty("max_shieldStrength"));
-    }
-    
 }

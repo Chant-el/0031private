@@ -88,24 +88,4 @@ public interface IWorld {
      */
     void showObstacles();
 
-    /**
-     * Loads the world configuration details
-     * @throws FileNotFoundException
-     */
-    void loadWorldConfiguration() throws FileNotFoundException;
-
-    /**
-     * Sets the centre coordinates of the world
-     */
-    void setCentre();
-
-    /**
-     * @return the maximum shield strength from the config file
-     */
-    int getMaxShieldStrength();
-
-    /**
-     * @return the shield strength for the world server
-     */
-    int configShieldStrength(int shieldStrength);
 }
