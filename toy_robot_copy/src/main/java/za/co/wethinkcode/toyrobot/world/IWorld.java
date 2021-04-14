@@ -2,7 +2,10 @@ package za.co.wethinkcode.toyrobot.world;
 
 import za.co.wethinkcode.toyrobot.Position;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.List;
+import java.util.Properties;
 
 /**
  * Your Text and Turtle worlds must implement this interface.
@@ -24,7 +27,11 @@ public interface IWorld {
         FAILED_OBSTRUCTED, //robot obstructed by at least one obstacle, thus cannot proceed.
     }
 
-    Position CENTRE = new Position(0,0);
+    // int maxShieldStrength = 10;
+
+    // Position CENTRE = new Position(0,0);
+
+    // Position CENTRE = 
 
     /**
      * Updates the position of your robot in the world by moving the nrSteps in the robots current direction.
@@ -80,4 +87,25 @@ public interface IWorld {
      * Gives opportunity to world to draw or list obstacles.
      */
     void showObstacles();
+
+    /**
+     * Loads the world configuration details
+     * @throws FileNotFoundException
+     */
+    void loadWorldConfiguration() throws FileNotFoundException;
+
+    /**
+     * Sets the centre coordinates of the world
+     */
+    void setCentre();
+
+    /**
+     * @return the maximum shield strength from the config file
+     */
+    int getMaxShieldStrength();
+
+    /**
+     * @return the shield strength for the world server
+     */
+    int configShieldStrength(int shieldStrength);
 }

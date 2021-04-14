@@ -4,7 +4,11 @@ public class Robot {
     private final Position TOP_LEFT = new Position(-200,100);
     private final Position BOTTOM_RIGHT = new Position(100,-200);
 
+    //set shields and centre from config file
     public static final Position CENTRE = new Position(0,0);
+    private static int shields = 10;
+    //get shots valueOf
+    private static int shots = 100;
 
     private Position position;
     private Direction currentDirection;
@@ -77,6 +81,23 @@ public class Robot {
 
     public String getName() {
         return name;
+    }
+
+    public static void updateShots(int shotsFired) {
+        shots += shotsFired;
+    }
+
+    public int getShots() {
+        return shots;
+    }
+
+    public void updateShields(int hit) {
+        
+        shields += hit;
+    }
+
+    public int getShields() {
+        return shields;
     }
 
     public void reset(){

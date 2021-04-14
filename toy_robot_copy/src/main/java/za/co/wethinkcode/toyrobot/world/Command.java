@@ -1,4 +1,6 @@
-package za.co.wethinkcode.toyrobot;
+//THIS IS COMMAND ON SERVER SIDE
+
+package za.co.wethinkcode.toyrobot.world;
 
 import java.util.List;
 import java.util.LinkedList;
@@ -6,34 +8,41 @@ import java.util.LinkedList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import za.co.wethinkcode.toyrobot.Robot;
+
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 
 public abstract class Command {
     private final String name;
     private String argument;
 
     JSONObject obj = new JSONObject();
+    JSONObject data = new JSONObject();
+    JSONObject state = new JSONObject();
 
     public List<String> history;
 
     public abstract boolean execute(Robot target);
 
-    public JSONObject getJSONMsg(Robot target, String instruction) {
+    public JSONObject getJSONResponse(Robot target, String instruction) {
+
         List<String> argument = new ArrayList<String>();
         String[] arguments = instruction.toLowerCase().trim().split(" ");
-        obj.put("robot", target.getName());
-        obj.put("command", arguments[0]);
+        state.put("position", target.getPosition());
+        state.put("direction", target.getCurrentDirection());
+        state.put("shields", target.getShields());
+        state.put("shots", target.getShots());
+        state.put("status", target.getStatus());
 
-        argument = Arrays.asList(arguments);
+        data.put("key1", "value1");
+        data.put("key2", "value2");
+        
+        obj.put("result", "Shutting down...");
+        obj.put("data", data);
+        obj.put("state", state);
 
-        // System.out.println(instruction);
-
-        if (arguments.length > 1){ 
-            obj.put("arguments", argument. subList(1, arguments.length));
-        } else {
-            obj.put("arguments", "[]");
-        }
 
         return obj;
     }
@@ -68,7 +77,7 @@ public abstract class Command {
 
     public static Command create(String instruction) {
         String[] args = instruction.toLowerCase().trim().split(" ");
-        // System.out.println(instruction);
+        System.out.println(instruction);
         switch (args[0]){
             case "shutdown":
             case "off":
