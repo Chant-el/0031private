@@ -84,7 +84,7 @@ public class Robot {
     }
 
     public static void updateShots(int shotsFired) {
-        shots += shotsFired;
+        shots -= shotsFired;
     }
 
     public int getShots() {
@@ -93,7 +93,7 @@ public class Robot {
 
     public void updateShields(int hit) {
         
-        shields += hit;
+        shields -= hit;
     }
 
     public int getShields() {
