@@ -40,7 +40,10 @@ public class BackCommand extends Command {
     }
 
     public String JSONRequestString(JSONObject message) {
-        Gson gson = new Gson();
-        String requestString = gson.fromJson(message, );
+        
+        String jsonString = message.toString();
+
+        return jsonString;
+
     }
 }

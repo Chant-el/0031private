@@ -13,12 +13,12 @@ public class WorldConfiguration {
     private Properties properties;
     private FileInputStream configFileInput;
 
-    public WorldConfiguration() throws FileNotFoundException {
+    public WorldConfiguration() {
 
         this.properties = new Properties();
-        this.configFileInput = new FileInputStream("config.properties");
 
         try {
+            this.configFileInput = new FileInputStream("config.properties");
             properties.load(configFileInput);
         } catch (IOException e) {
             e.printStackTrace();
@@ -31,7 +31,7 @@ public class WorldConfiguration {
 
         String containerVariable;
         containerVariable = properties.getProperty(key);
-        Position position = new Position(Integer.parseInt(String.valueOf(containerVariable.charAt(1))), Integer.parseInt(String.valueOf(centre.charAt(3))));
+        Position position = new Position(Integer.parseInt(String.valueOf(containerVariable.charAt(1))), Integer.parseInt(String.valueOf(containerVariable.charAt(3))));
         
         return position;
 
@@ -91,4 +91,5 @@ public class WorldConfiguration {
         int maxShieldStrength = Integer.parseInt(getStringConfigValue("max_shieldStrength"));
         return maxShieldStrength;
     }
+
 }

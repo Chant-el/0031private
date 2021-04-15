@@ -17,9 +17,7 @@ public class AbstractWorld implements IWorld {
 
     private final Position CENTRE = worldconfig.getCentre();
     private final Position TOP_LEFT = worldconfig.getTopLeft();
-    private final Position TOP_RIGHT = new Position(200,100);
-    private final Position BOTTOM_LEFT = new Position(-100,-200);
-    private final Position BOTTOM_RIGHT = new Position(100,-200);
+    private final Position BOTTOM_RIGHT = worldconfig.getBottomRight();
 
     private Position position;
     private Direction currentDirection = Direction.UP;
